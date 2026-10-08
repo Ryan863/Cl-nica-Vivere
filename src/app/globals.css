@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  /* Design Reference (Image 1) - High End Medical Editorial Blue Palette */
+  --bg-primary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F0F6FF;
+  --bg-blue-light: #EBF3FE;
+  
+  --primary-blue: #0052D4;
+  --primary-electric: #0B63F6;
+  --primary-royal: #0066FF;
+  --primary-dark: #071F42;
+  --primary-navy: #0A2540;
+  
+  --text-primary: #0F172A;
+  --text-heading: #071F42;
+  --text-muted: #475569;
+  --text-subtle: #64748B;
+  
+  --border-light: rgba(219, 234, 254, 0.85);
+  --border-subtle: rgba(148, 163, 184, 0.18);
+  --border-focus: #0B63F6;
+
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-primary-blue: var(--primary-blue);
+  --color-primary-electric: var(--primary-electric);
+  --color-primary-royal: var(--primary-royal);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-navy: var(--primary-navy);
+  
+  --color-clinic-bg: var(--bg-primary);
+  --color-clinic-subtle: var(--bg-subtle);
+  
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #0052D4;
+  color: #FFFFFF;
+}
+
+/* Glassmorphism Cards as in Design Reference (Image 1) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(219, 234, 254, 0.9);
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card:hover {
+  border-color: rgba(147, 197, 253, 0.9);
+  box-shadow: 0 16px 36px -12px rgba(11, 99, 246, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Vibrant Blue Feature Card (As in Card 01 of Image 1) */
+.blue-hero-card {
+  background: linear-gradient(135deg, #0047BA 0%, #005EEB 50%, #2080FF 100%);
+  color: #FFFFFF;
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pill Badges */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  box-shadow: 0 2px 8px rgba(11, 99, 246, 0.05);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #071F42;
+  backdrop-filter: blur(8px);
+}
+
+/* Editorial Button System */
+.btn-primary-blue {
+  background: linear-gradient(135deg, #0052D4 0%, #0B63F6 100%);
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 20px -4px rgba(11, 99, 246, 0.35);
+}
+.btn-primary-blue:hover {
+  background: linear-gradient(135deg, #0044B3 0%, #0056DE 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -4px rgba(11, 99, 246, 0.45);
+}
+
+.btn-secondary-pill {
+  background: #FFFFFF;
+  color: #071F42;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary-pill:hover {
+  background: #F8FAFC;
+  border-color: #93C5FD;
+  color: #0052D4;
+  transform: translateY(-1px);
+}
+
+/* Radial Glows */
+.radial-blue-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(11, 99, 246, 0.12) 0%, rgba(59, 130, 246, 0.04) 45%, transparent 70%);
+}
+
+/* Aurora Background Animation */
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+.animate-aurora {
+  animation: aurora 40s linear infinite;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
